@@ -27,7 +27,7 @@ function prompt_paradox_start_segment {
   [[ -n "$1" ]] && bg="%K{$1}" || bg="%k"
   [[ -n "$2" ]] && fg="%F{$2}" || fg="%f"
   if [[ "$_prompt_paradox_current_bg" != 'NONE' && "$1" != "$_prompt_paradox_current_bg" ]]; then
-    print -n " $bg%F{$_prompt_paradox_current_bg}$_prompt_paradox_segment_separator$fg "
+    print -n " $bg%F{$_prompt_paradox_current_bg}$_prompt_paradox_segment_separator$fg"
   else
     print -n "$bg$fg"
   fi
@@ -37,7 +37,7 @@ function prompt_paradox_start_segment {
 
 function prompt_paradox_end_segment {
   if [[ -n "$_prompt_paradox_current_bg" && "$_prompt_paradox_current_bg" != 'NONE' ]]; then
-    print -n " %k%F{$_prompt_paradox_current_bg}$_prompt_paradox_segment_separator"
+    print -n "%k%F{$_prompt_paradox_current_bg}$_prompt_paradox_segment_separator"
   else
     print -n "%k"
   fi
@@ -59,7 +59,7 @@ function prompt_paradox_build_prompt {
   #print -n "$prompt "
 
   if [[ -n "$git_info" ]]; then
-    local color=12
+    local color=blue
     local branch="${(e)git_info[ref]}"
     if [[ "${git_info[dirty]}" == 'true' ]]; then
       if [[ "$branch" == "master" ]]; then
