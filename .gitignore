@@ -2,4 +2,5 @@
 *.zwc.old
 modules/*/cache.zsh
 contrib
+runcoms/zshrc
 .DS_Store
