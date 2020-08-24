@@ -77,7 +77,7 @@ function prompt_paradox_build_prompt {
   fi
 
   if [[ -n "$python_info" ]]; then
-    prompt_paradox_start_segment white black '${(e)python_info[virtualenv]}'
+    prompt_paradox_start_segment 12 black '${(e)python_info[virtualenv]}'
   fi
 
   prompt_paradox_end_segment
@@ -170,7 +170,7 @@ function prompt_paradox_setup {
     'dirty' '%D'
 
   # %v - virtualenv name.
-  zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
+  zstyle ':prezto:module:python:info:virtualenv' format ' 林%v'
 
   # Define prompts.
   PROMPT='
